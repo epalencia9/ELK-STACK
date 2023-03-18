@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/edmundtetteh/Docker'
+                git branch: 'main', credentialsId: 'github', url: ''
             }
         }
         stage('Terraform init') {
