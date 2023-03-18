@@ -10,7 +10,7 @@ terraform {
 # Configure the AWS provider
 
 provider "aws" {
-    region = "us-east-2"
+    region = "us-west-2"
 }
 
 
@@ -20,7 +20,7 @@ resource "aws_vpc" "MyLab-VPC"{
     cidr_block = var.cidr_block[0]
 
     tags = {
-        Name = "MyLab-VPC"
+        Name = "My-New-VPC"
     }
 
 }
@@ -32,7 +32,7 @@ resource "aws_subnet" "MyLab-Subnet1" {
     cidr_block = var.cidr_block[1]
 
     tags = {
-        Name = "MyLab-Subnet1"
+        Name = "My-New-Subnet1"
     }
 }
 
@@ -42,7 +42,7 @@ resource "aws_internet_gateway" "MyLab-IntGW" {
     vpc_id = aws_vpc.MyLab-VPC.id
 
     tags = {
-        Name = "MyLab-InternetGW"
+        Name = "My-New-InternetGW"
     }
 }
 
@@ -90,7 +90,7 @@ resource "aws_route_table" "MyLab_RouteTable" {
     }
 
     tags = {
-        Name = "MyLab_Routetable"
+        Name = "My-New-Routetable"
     }
 }
 
@@ -112,6 +112,6 @@ resource "aws_instance" "DemoResource" {
   associate_public_ip_address = true
   
   tags = {
-    Name = "DemoResource"
+    Name = "Demo-Resource"
   }
 }
